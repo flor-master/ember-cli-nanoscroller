@@ -1,0 +1,1 @@
+export { default } from 'ember-cli-nanoscroll/components/nano-scroll';

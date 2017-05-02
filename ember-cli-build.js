@@ -15,5 +15,12 @@ module.exports = function(defaults) {
     behave. You most likely want to be modifying `./index.js` or app's build file
   */
 
+  app.import({
+    development: 'vendor/nanoscroller/bin/javascripts/jquery.nanoscroller.js',
+    production: 'vendor/nanoscroller/bin/javascripts/jquery.nanoscroller.min.js',
+  });
+
+  app.import('bower_components/nanoscroller/bin/css/nanoscroller.css');
+
   return app.toTree();
 };
