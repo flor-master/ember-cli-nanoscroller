@@ -44,7 +44,8 @@
   "style": "bin/css/nanoscroller.css",
   "files": [
     "bin/css/nanoscroller.css",
-    "bin/javascripts/jquery.nanoscroller.js"
+    "bin/javascripts/jquery.nanoscroller.js",
+    "coffescripts/jquery.nanoscroller.coffee"
   ],
   "repository": {
     "type": "git",
