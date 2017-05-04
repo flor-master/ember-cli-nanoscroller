@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-nanoscroll",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "The default blueprint for ember-cli addons.",
   "keywords": [
     "ember-addon"
@@ -46,5 +46,9 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Rastopyr/ember-cli-nanoscroller.git"
   }
 }
