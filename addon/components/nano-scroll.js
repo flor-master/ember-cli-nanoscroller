@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import layout from '../templates/components/nano-scroll';
 
-const { Component, Evented, on } = Ember;
+const { Component, Evented, on, run } = Ember;
 
 // TODO: Test coverage for events and properties
 
@@ -23,29 +23,31 @@ export default Component.extend(Evented, {
       sliderClass: this.get('sliderClass'),
       contentClass: this.get('contentClass'),
       tabIndex: this.get('tabIndex'),
+      scrollTop: this.get('scrollTop'),
+      scrollBottom: this.get('scrollBottom')
     });
 
     scroller.on('scrollend', (...args) => this.trigger('scrollend', ...args));
     scroller.on('scrolltop', (...args) => this.trigger('scrolltop', ...args));
 
     this.set('scroller', scroller);
+
+    if (this.get('scrollTop')) {
+      run.scheduleOnce('afterRender', () => {
+        this.get('scroller').nanoScroller({ scrollTop: this.get('scrollTop') });
+      });
+    }
+
+    if (this.get('scrollBottom')) {
+      run.scheduleOnce('afterRender', () => {
+        this.get('scroller').nanoScroller({ scrollBottom: this.get('scrollBottom') });
+      });
+    }
   }),
 
   scroll(scroll) {
     this.get('scroller').nanoScroller({
       scroll,
-    });
-  },
-
-  scrollTop(scrollTop) {
-    this.get('scroller').nanoScroller({
-      scrollTop,
-    });
-  },
-
-  scrollBottom(scrollBottom) {
-    this.get('scroller').nanoScroller({
-      scrollBottom,
     });
   },
 
