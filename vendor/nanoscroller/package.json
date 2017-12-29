@@ -45,6 +45,7 @@
   "files": [
     "bin/css/nanoscroller.css",
     "bin/javascripts/jquery.nanoscroller.js",
+    "bin/javascripts/jquery.nanoscroller.js.map",
     "coffescripts/jquery.nanoscroller.coffee"
   ],
   "repository": {
